@@ -4,8 +4,8 @@ export default class ResumeService{
     getResume(){
         return axios.get("http://localhost:81/api/resume/getAll")
     }
-    getByResumeId(jobPostingId){
-        return axios.get("http://localhost:81/api/jobPosting/getById?id="+jobPostingId)
+    getByResumeId(resumeId){
+        return axios.get("http://localhost:81/api/jobPosting/getById?id="+resumeId)
     }
     updateGithub(githubLink, resumeId){
         return axios.get("http://localhost:81/api/resume/updateGithub?githubLink="+githubLink+"&resumeId="+resumeId)
@@ -15,6 +15,9 @@ export default class ResumeService{
     }
     updateLinkedin(linkedinLink, resumeId){
         return axios.get("http://localhost:81/api/resume/updateLinkedin?linkedinLink="+linkedinLink+"&resumeId="+resumeId)
+    }
+    getById(resumeId){
+        return axios.get("http://localhost:81/api/resume/findById?id="+resumeId)
     }
 
 }
