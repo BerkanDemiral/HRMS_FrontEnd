@@ -1,10 +1,8 @@
 import axios from "axios";
 
-export default class ProductService{
-    getProducts(){
-        return axios.get("http://localhost:8081/api/products/getall")
-    }
-    getByProductName(productName){
-        return axios.get("http://localhost:8081/api/products/getByProductName?productName="+productName)
+export default class CandidateService{
+    getCandidates(){
+        return axios.get("http://localhost:81/api/candidates/getall")
     }
 }
+
