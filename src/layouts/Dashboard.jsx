@@ -1,10 +1,11 @@
 import React from 'react'
 import {GridColumn, GridRow, Grid } from 'semantic-ui-react'
 import Categories from './Categories'
-import JobPostingList from "../pages/JobPositionList"
+import JobPostingList from "../pages/JobPostingList"
 import CandidateList from "../pages/CandidateList"
 import EmployerList from "../pages/EmployerList"
 import { Route } from 'react-router';
+
 
 export default function Dashboard() {
     return (
