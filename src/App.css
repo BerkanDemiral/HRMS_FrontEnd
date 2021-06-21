@@ -4,3 +4,11 @@
 .ui.main.container{
   margin-top: 5em;
 }
+h1{
+  font-family: 'Nerko One', cursive;
+}
+.containerr{
+  width: 80%;
+  height: 85vh;
+  margin: 70px auto;
+}

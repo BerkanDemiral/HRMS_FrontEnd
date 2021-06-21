@@ -16,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 export default function Content() {
     return (
+       
         <>
             <Segment
                 inverted
@@ -23,9 +24,8 @@ export default function Content() {
                 style={{
                     position: "fixed",
                     bottom: 0,
-                    padding: "20px",
                     width: "100%",
-                    background: "/public/Margo.jpg/",
+                    
 
                 }}
             >
@@ -65,6 +65,8 @@ export default function Content() {
                             </Grid>
                         </Grid.Column>
                         </Grid>
+                    </Container>
+                    <Container >
                         <Grid center divided stackable>
                             <Grid.Column width={16}>
                                 <Divider inverted section />
@@ -91,10 +93,9 @@ export default function Content() {
                                 </List>
                             </Grid.Column>
                         </Grid>
-                  
-
-                </Container>
+                    </Container>
             </Segment>
         </>
+     
     )
 }

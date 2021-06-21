@@ -23,14 +23,12 @@ export default function Navi() {
         <Container>
             <div>
                 
-                <Segment  style= {{color:"red"}} inverted>
-                    <Menu inverted pointing fixed="top" >
+                <Segment style= {{color:"red"}} inverted>
+                    <Menu style={{background:"#9b9fb0"}} pointing fixed="top" >
                         <Container>
                             <Menu.Item as={NavLink} to ="/" name="Anasayfa"/>
-                            <Menu.Item name="Kariyer Merkezi" />
-                            <Menu.Item>
-                                <Input icon='search' placeholder='Ara' />
-                            </Menu.Item>
+                            <Menu.Item as={NavLink} to ="/" name="Kariyer Merkezi" />
+                            <Menu.Item as={NavLink} to ="/" name="İletişim"/>
 
 
                             <Menu.Menu position="right">
