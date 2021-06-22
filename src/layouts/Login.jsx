@@ -1,20 +1,21 @@
 import React from 'react'
-
+import { Image} from 'semantic-ui-react'
 export default function Login() {
     return (
-       
-        <div>
-            <div class="limiter">
+
+
+        <div class="limiter ">
+            <div class="container-login100">
                 <div class="wrap-login100">
                     <div class="login100-pic js-tilt" data-tilt>
-                        <img src="../images/img-01.png" alt="IMG" />
+                        <img src="https://png.pngtree.com/png-vector/20190810/ourlarge/pngtree-recruitment-search-find-human-resource-people-flat-color-ico-png-image_1654468.jpg"/>
                     </div>
                     <form class="login100-form validate-form">
                         <span class="login100-form-title">
-                            Member Login
+                            Üye Girişi
                         </span>
                         <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                            <input class="input100" type="text" name="email" placeholder="Email" />
+                            <input required class="input100" type="text" name="email" placeholder="Kullanıcı adı/Email" />
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -22,7 +23,7 @@ export default function Login() {
                         </div>
 
                         <div class="wrap-input100 validate-input" data-validate="Password is required">
-                            <input class="input100" type="password" name="pass" placeholder="Password" />
+                            <input required class="input100" type="password" name="pass" placeholder="Parola" />
                             <span class="focus-input100"></span>
                             <span class="symbol-input100">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
@@ -35,25 +36,19 @@ export default function Login() {
                             </button>
                         </div>
 
-                        <div class="text-center p-t-12">
-                            <span class="txt1">
-                                Forgot
-                            </span>
-                            <a class="txt2" href="#">
-                                Username / Password?
-                            </a>
-                        </div>
+                
 
                         <div class="text-center p-t-136">
                             <a class="txt2" href="#">
-                                Create your Account
+                                Hesap Oluştur
                                 <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                             </a>
                         </div>
                     </form>
                 </div>
             </div>
+    
         </div>
-       
+
     )
 }

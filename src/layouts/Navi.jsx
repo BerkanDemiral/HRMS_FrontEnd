@@ -26,9 +26,9 @@ export default function Navi() {
                 <Segment style= {{color:"red"}} inverted>
                     <Menu style={{background:"#9b9fb0"}} pointing fixed="top" >
                         <Container>
-                            <Menu.Item as={NavLink} to ="/" name="Anasayfa"/>
-                            <Menu.Item as={NavLink} to ="/" name="Kariyer Merkezi" />
-                            <Menu.Item as={NavLink} to ="/" name="İletişim"/>
+                            <Menu.Item as={NavLink} to ="/" style={{fontFamily: "Tahoma"}} name="Anasayfa"/>
+                            <Menu.Item as={NavLink} to ="/" style={{fontFamily: "Tahoma"}} name="Kariyer Merkezi" />
+                            <Menu.Item as={NavLink} to ="/" style={{fontFamily: "Tahoma"}} name="İletişim"/>
 
 
                             <Menu.Menu position="right">

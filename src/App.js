@@ -10,11 +10,10 @@ import Content from './layouts/Content';
 function App() {
   return (
     <div className="App">
-      <Navi/>
-      <Container className="main">
-        <Dashboard/>
-      </Container>
-      
+      <Navi />
+      <Dashboard/>
+      <Content/>
+
     </div>
   );
 }
