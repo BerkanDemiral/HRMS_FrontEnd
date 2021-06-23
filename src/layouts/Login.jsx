@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image} from 'semantic-ui-react'
+import { Image } from 'semantic-ui-react'
 export default function Login() {
     return (
 
@@ -8,7 +8,7 @@ export default function Login() {
             <div class="container-login100">
                 <div class="wrap-login100">
                     <div class="login100-pic js-tilt" data-tilt>
-                        <img src="https://png.pngtree.com/png-vector/20190810/ourlarge/pngtree-recruitment-search-find-human-resource-people-flat-color-ico-png-image_1654468.jpg"/>
+                        <img src="https://png.pngtree.com/png-vector/20190810/ourlarge/pngtree-recruitment-search-find-human-resource-people-flat-color-ico-png-image_1654468.jpg" />
                     </div>
                     <form class="login100-form validate-form">
                         <span class="login100-form-title">
@@ -36,7 +36,7 @@ export default function Login() {
                             </button>
                         </div>
 
-                
+
 
                         <div class="text-center p-t-136">
                             <a class="txt2" href="#">
@@ -47,7 +47,7 @@ export default function Login() {
                     </form>
                 </div>
             </div>
-    
+
         </div>
 
     )

@@ -10,7 +10,7 @@ export default function JobPositionDetail() {
     const [jobPositions, setJobPositions] = useState({})
     useEffect(() => {
         let jobPositionService = new JobPositionService()
-        jobPositionService.(id).then(result => setJobPositions(result.data.data))
+        jobPositionService.getJobPosition().then(result => setJobPositions(result.data.data))
 
     }, [])
 

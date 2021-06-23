@@ -16,8 +16,8 @@ export default function Content() {
                 <footer>
                     <div class="footer-content">
                         <h3>Kariyerinize Yön Verin</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam vel provident unde fugiat neque id
-                            et laudantium adipisci libero, consequatur amet facilis ab, excepturi eos ad! Aspernatur in veritatis beatae.</p>
+                        <p>"Hayat, kendini bulmakla ilgili değildir; kendini yaratmakla ilgilidir." </p>
+                        <p>George Bernard Shaw</p>
                         <u1 class="socials">
                             <li><a href="#" ><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>

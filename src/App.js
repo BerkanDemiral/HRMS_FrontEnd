@@ -11,9 +11,10 @@ function App() {
   return (
     <div className="App">
       <Navi />
-      <Dashboard/>
-      <Content/>
-
+      <div className="main">
+        <Dashboard />
+      </div>
+      <Content />
     </div>
   );
 }
