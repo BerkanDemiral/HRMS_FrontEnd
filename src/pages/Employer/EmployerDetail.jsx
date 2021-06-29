@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router'
-import EmployerService from '../services/EmployerService'
+import EmployerService from '../../services/EmployerService'
 
 export default function EmployerDetail() {
 

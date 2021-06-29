@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router'
 
-import JobPositionService from '../services/JobPositionService'
+import JobPositionService from '../../services/JobPositionService'
 
 export default function JobPositionDetail() {
 

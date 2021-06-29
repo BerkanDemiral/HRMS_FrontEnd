@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Grid, GridColumn, GridRow } from 'semantic-ui-react'
-import Categories from '../layouts/Categories'
-import ResumeService from '../services/ResumeService'
-
+import { Grid, GridColumn, GridRow ,  Icon, Menu, Table } from 'semantic-ui-react'
+import Categories from '../../layouts/Categories';
+import ResumeService from '../../services/ResumeService';
+import { Link } from "react-router-dom";
 
 export default function ResumeList() {
 
@@ -21,7 +21,21 @@ export default function ResumeList() {
                         <Categories />
                     </GridColumn>
                     <GridColumn width={12}>
-                        Tablo deneme
+                    <div class="container">
+            <Grid columns={2} divided>
+                <GridRow>
+                    <GridColumn width={4}>
+                        <Categories />
+                    </GridColumn>
+                    <GridColumn width={12}>
+                        ssdsd
+                    </GridColumn>
+                </GridRow>
+            </Grid>
+
+
+
+        </div>
                     </GridColumn>
                 </GridRow>
             </Grid>

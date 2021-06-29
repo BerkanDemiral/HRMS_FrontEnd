@@ -1,22 +1,33 @@
 import React from 'react'
-import CandidateList from '../pages/CandidateList'
-import EmployerList from '../pages/EmployerList'
-import JobPositionDetail from '../pages/JobPositionDetail'
-import JobPositionList from '../pages/JobPositionList'
-import ResumeList from '../pages/ResumeList'
+import CandidateList from '../pages/Candidate/CandidateList'
+import EmployerList from '../pages/Employer/EmployerList'
+import JobPositionList from '../pages/JobPosition/JobPositionList'
+import ResumeList from '../pages/Resume/ResumeList'
 import Login from './Login'
 import { Route } from 'react-router-dom';
+import JobPostingList from '../pages/JobPosting/JobPostingList'
+import Content from './Content'
+import Navi from './Navi'
+import { Container } from 'semantic-ui-react'
+import RegisterForNormalUser from './Register/RegisterForNormalUser'
 
 export default function Dashboard() {
     return (
-        <div>
-            <Route exact path="/candidate" component={CandidateList} />
-            <Route exact path="/employer" component={EmployerList} />
-            <Route exact path="/jobPosting" component={JobPositionDetail} />
-            <Route exact path="/jobPosition" component={JobPositionList} />
-            <Route exact path="/resume" component={ResumeList} />
-            <Route exact path="/" component={Login} />
-            <Route exact path="/login" component={Login} />
+        <div >
+            <Navi />
+            <Container className="main">
+                <Route exact path="/candidates/" component={CandidateList} />
+                <Route path="/candidates/:id" component={CandidateList} />
+                <Route exact path="/employers" component={EmployerList} />
+                <Route exact path="/jobPostings" component={JobPostingList} />
+                <Route exact path="/jobPositions" component={JobPositionList} />
+                <Route exact path="/resumes" component={ResumeList} />
+                <Route exact path="/" component={CandidateList} />
+                <Route exact path="/login" component={Login} />
+                {/* <Route exact path="/register" component={RegisterForNormalUser}/> */}
+
+            </Container>
+            <Content />
         </div>
     )
 }

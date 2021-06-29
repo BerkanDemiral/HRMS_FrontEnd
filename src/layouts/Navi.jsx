@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Container, Menu, Input, Segment } from 'semantic-ui-react'
 import SignIn from './SignIn'
 import SignOut from './SignOut'
-import {NavLink} from "react-router-dom"
-import {useHistory} from "react-router"
+import { NavLink } from "react-router-dom"
+import { useHistory } from "react-router"
 
 
 export default function Navi() {
@@ -17,27 +17,28 @@ export default function Navi() {
     }
     function handleSignIn(params) {
         setisAuthanticated(true)
+        history.push("/")
     }
 
     return (
         <Container>
             <div>
-                
-                <Segment style= {{color:"red"}} inverted>
-                    <Menu style={{background:"#9b9fb0"}} pointing fixed="top" >
-                        <Container>
-                            <Menu.Item as={NavLink} to ="/" style={{fontFamily: "Tahoma"}} name="Anasayfa"/>
-                            <Menu.Item as={NavLink} to ="/" style={{fontFamily: "Tahoma"}} name="Kariyer Merkezi" />
-                            <Menu.Item as={NavLink} to ="/" style={{fontFamily: "Tahoma"}} name="İletişim"/>
 
 
-                            <Menu.Menu position="right">
-                                {isAuthanticated ? <SignIn signOut={handleSignOut} /> : <SignOut signIn={handleSignIn} />}
-                            </Menu.Menu>
-                        </Container>
+                <Menu style={{ background: "#ffe066" }} pointing fixed="top" >
+                    <Container>
+                        <Menu.Item as={NavLink} to="/" style={{ fontFamily: "Tahoma" }} name="Anasayfa" />
+                        <Menu.Item as={NavLink} to="/jobPosting" style={{ fontFamily: "Tahoma" }} name="Kariyer Merkezi" />
+                        <Menu.Item as={NavLink} to="/resume" style={{ fontFamily: "Tahoma" }} name="İletişim" />
 
-                    </Menu>
-                </Segment>
+
+                        <Menu.Menu position="right">
+                            {isAuthanticated ? <SignIn signOut={handleSignOut} /> : <SignOut signIn={handleSignIn} />}
+                        </Menu.Menu>
+                    </Container>
+
+                </Menu>
+
             </div>
         </Container>
     )

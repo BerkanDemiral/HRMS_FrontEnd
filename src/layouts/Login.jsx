@@ -1,54 +1,54 @@
 import React from 'react'
-import { Image } from 'semantic-ui-react'
-export default function Login() {
+import { Formik, Form } from "formik";
+import * as Yup from "yup"
+import { Button } from 'semantic-ui-react';
+import HrmsTextInput from "../utils/customFormControl/HrmsTextInput";
+
+
+
+
+export default function Login({ signIn }) {
+
+
+    const initialValues = { email: "", password: "" }
+    const schema = Yup.object({
+        email: Yup.string().email().required("Email girişi zorunludur"),
+        password: Yup.string()
+            .required("En az 6 haneli bir parola giriniz")
+
+    })
+
     return (
 
+        <Formik
+            initialValues={initialValues}
+            validationSchema={schema}
+            onSubmit={(values) => {
 
-        <div class="limiter ">
-            <div class="container-login100">
-                <div class="wrap-login100">
-                    <div class="login100-pic js-tilt" data-tilt>
-                        <img src="https://png.pngtree.com/png-vector/20190810/ourlarge/pngtree-recruitment-search-find-human-resource-people-flat-color-ico-png-image_1654468.jpg" />
+            }}
+        >
+
+            <div class="loginForm">
+                <div class="ui inverted segment">
+                    <p style={{fontSize:"20px"}} class="center">Giriş Yap</p>
+                    <div class="ui inverted form">
+                        <div class="two fields">
+                            <div class="field">
+                                <label>Email</label>
+                                <HrmsTextInput name="email" placeholder="Email" />
+                            </div>
+                            <div class="field">
+                                <label>Pasword</label>
+                                <HrmsTextInput name="password" placeholder="Parola" />
+                            </div>
+                        </div>
+                        <Button onClick={signIn} color="green" type="submmit">Giriş Yap</Button>
+                        <div class="ui message">
+                            Hesap Oluşturun -- <a href="https://s.codepen.io/voltron2112/debug/PqrEPM?">Kayıt</a>
+                        </div>
                     </div>
-                    <form class="login100-form validate-form">
-                        <span class="login100-form-title">
-                            Üye Girişi
-                        </span>
-                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                            <input required class="input100" type="text" name="email" placeholder="Kullanıcı adı/Email" />
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </span>
-                        </div>
-
-                        <div class="wrap-input100 validate-input" data-validate="Password is required">
-                            <input required class="input100" type="password" name="pass" placeholder="Parola" />
-                            <span class="focus-input100"></span>
-                            <span class="symbol-input100">
-                                <i class="fa fa-lock" aria-hidden="true"></i>
-                            </span>
-                        </div>
-
-                        <div class="container-login100-form-btn">
-                            <button class="login100-form-btn">
-                                Login
-                            </button>
-                        </div>
-
-
-
-                        <div class="text-center p-t-136">
-                            <a class="txt2" href="#">
-                                Hesap Oluştur
-                                <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </form>
                 </div>
             </div>
-
-        </div>
-
+        </Formik>
     )
 }

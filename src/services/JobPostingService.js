@@ -7,4 +7,7 @@ export default class JobPostingService{
     getByJobPostingId(jobPostingId){
         return axios.get("http://localhost:81/api/jobPosting/getById?id="+jobPostingId)
     }
+
+    
+
 }

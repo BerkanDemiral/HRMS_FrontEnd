@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router'
-import CandidateService from '../services/CandidateService'
+import CandidateService from '../../services/CandidateService'
 
 export default function CandidateDetail() {
     
@@ -14,6 +14,7 @@ export default function CandidateDetail() {
     }, [])
 
     return (
+        
         <div>
             İş arayan detayı
         </div>

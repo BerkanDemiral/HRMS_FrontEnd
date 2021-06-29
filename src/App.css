@@ -1,22 +1,22 @@
 .App {
   text-align: center;
+ 
 }
 .ui.main.container{
-  margin-top: 5em;
+  margin-top: 9em;
 }
 h1{
   font-family: 'Nerko One', cursive;
 }
-.containerr{
-  width: 80%;
-  height: 85vh;
-  margin: 70px auto;
-}
-.body{
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   
 }
+
 footer{
-  position: static;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -24,7 +24,6 @@ footer{
   height: auto;
   width: 100%;
   font-family: "Open Sans";
-  padding-top: 40px;
   color: #fff;
 }
 .footer-content{
@@ -39,19 +38,21 @@ footer{
   font-weight: 400;
   text-transform: capitalize;
   line-height: 3rem;
+  padding-top: 25px;
 }
 .footer-content p{
   max-width: 500px;
-  margin: 10px auto;
-  line-height: 28px;
-  font-size: 14px;
+  font-family: Poppins-Regular;
+	font-size: 16px;
+	line-height: 1.7;
+	color: #666666;
 }
 .socials{
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0 3rem 0;
+  margin: 1rem 0 2rem 0;
 }
 .socials li{
   margin: 0 10px;
@@ -72,7 +73,7 @@ footer{
 .footer-bottom{
   background: #000;
   width: 100vw;
-  padding: 20px 0;
+  padding: 7px 0;
   text-align: center;
 }
 .footer-bottom p{
@@ -85,3 +86,4 @@ footer{
   opacity: .4;
   font-weight: 200;
 }
+

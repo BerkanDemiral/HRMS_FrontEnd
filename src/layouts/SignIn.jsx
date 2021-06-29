@@ -1,5 +1,7 @@
 import React from 'react'
 import { Menu, Dropdown, Image, Button, GridColumn } from 'semantic-ui-react'
+import {NavLink} from "react-router-dom"
+
 
 export default function SignIn({ signOut }) {
     return (
@@ -7,10 +9,10 @@ export default function SignIn({ signOut }) {
 
             <Menu.Item>
                 <GridColumn>
-                    <Button primary> İlan Ekle </Button>
+                    <Button primary as={NavLink} to="/myJobPostings" > Başvurularım </Button>
                 </GridColumn>
                 <GridColumn>
-                    <Image style={{ marginRight: "4.9 em" }} avatar spaced="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/User_icon-cp.svg/485px-User_icon-cp.svg.png" />
+                    <Image style={{ marginRight: "4.9 em" }} avatar spaced="right" src="https://media-exp1.licdn.com/dms/image/C4E03AQGbjbfZNw5jNQ/profile-displayphoto-shrink_200_200/0/1619296393861?e=1628121600&v=beta&t=i8kqO-j87ydMHnm-PmcSnCbYe5wlj9AehcmIJjId3c4" />
                     <Dropdown pointing="top-left" text="Berkan">
                         <Dropdown.Menu>
                             <Dropdown.Item text="Bilgilerim" icon="info" />

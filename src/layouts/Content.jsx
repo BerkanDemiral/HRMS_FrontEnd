@@ -3,16 +3,6 @@ import { Segment } from "semantic-ui-react";
 export default function Content() {
     return (
         <>
-            <Segment
-                inverted
-                vertical
-                style={{
-                    position: "static",
-                    bottom: 0,
-                    width: "100%",
-                }}
-            >
-
                 <footer>
                     <div class="footer-content">
                         <h3>Kariyerinize Yön Verin</h3>
@@ -31,7 +21,7 @@ export default function Content() {
                     </div>
                 </footer>
 
-            </Segment>
+            
         </>
     );
 }

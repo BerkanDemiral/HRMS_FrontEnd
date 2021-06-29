@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 
-import ResumeService from '../services/ResumeService'
+import ResumeService from '../../services/ResumeService'
 
 export default function ResumeDetail() {
 
