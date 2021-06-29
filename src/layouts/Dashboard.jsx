@@ -28,7 +28,6 @@ export default function Dashboard() {
                 <Route exact path="/registerEmployer" component={RegisterForEmployer}/>
                 <Route exact path="/login" component={Login} />
                 
-
             </Container>
             <Content />
         </div>
