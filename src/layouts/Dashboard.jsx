@@ -8,6 +8,7 @@ import JobPostingList from '../pages/JobPosting/JobPostingList'
 import Content from './Content'
 import Navi from './Navi'
 import { Container } from 'semantic-ui-react'
+import JobPostingDetail from '../pages/JobPosting/JobPostingDetail'
 
 export default function Dashboard() {
     return (
@@ -18,6 +19,7 @@ export default function Dashboard() {
                 <Route path="/candidates/:id" component={CandidateList} />
                 <Route exact path="/employers" component={EmployerList} />
                 <Route exact path="/jobPostings" component={JobPostingList} />
+                <Route path="/jobPostings/:id" component={JobPostingDetail} />
                 <Route exact path="/jobPositions" component={JobPositionList} />
                 <Route exact path="/resumes" component={ResumeList} />
                 <Route exact path="/" component={CandidateList} />

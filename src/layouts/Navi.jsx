@@ -28,10 +28,7 @@ export default function Navi() {
                 <Menu style={{ background: "#ffe066" }} pointing fixed="top" >
                     <Container>
                         <Menu.Item as={NavLink} to="/" style={{ fontFamily: "Tahoma" }} name="Anasayfa" />
-                        <Menu.Item as={NavLink} to="/jobPosting" style={{ fontFamily: "Tahoma" }} name="Kariyer Merkezi" />
-                        <Menu.Item as={NavLink} to="/resume" style={{ fontFamily: "Tahoma" }} name="İletişim" />
-
-
+                        <Menu.Item icon="search" as={NavLink} to="/jobPosting" style={{ fontFamily: "Tahoma" }} name="İş ilanları" />
                         <Menu.Menu position="right">
                             {isAuthanticated ? <SignIn signOut={handleSignOut} /> : <SignOut signIn={handleSignIn} />}
                         </Menu.Menu>

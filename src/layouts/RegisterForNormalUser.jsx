@@ -158,6 +158,7 @@ export default function RegisterForNormalUser() {
                         variant="contained"
                         color="primary"
                         className={classes.submit}
+                        
                     >
                         Kayıt Ol
                     </Button>

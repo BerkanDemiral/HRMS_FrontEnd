@@ -19,6 +19,7 @@ export default function HomeDashboard() {
             <Route path="/candidates/:id" component={Dashboard} />
             <Route exact path="/employers" component={Dashboard} />
             <Route exact path="/jobPostings" component={Dashboard} />
+            <Route path="/jobPostings/:id" component={Dashboard} />
             <Route exact path="/jobPositions" component={Dashboard} />
             <Route exact path="/resumes" component={Dashboard} />
             <Route exact path="/" component={Dashboard} />

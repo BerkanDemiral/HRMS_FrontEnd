@@ -52,7 +52,7 @@ export default function JobPostingList() {
                             </Table.Body>
                             <Table.Footer>
                                 <Table.Row>
-                                    <Table.HeaderCell colSpan='3'>
+                                    <Table.HeaderCell colSpan='8'>
                                         <Menu floated='right' pagination>
                                             <Menu.Item as='a' icon>
                                                 <Icon name='chevron left' />
@@ -64,12 +64,8 @@ export default function JobPostingList() {
                                             <Menu.Item as='a' icon>
                                                 <Icon name='chevron right' />
                                             </Menu.Item>
+                                            
                                         </Menu>
-                                    </Table.HeaderCell>
-                                </Table.Row>
-                                <Table.Row>
-                                    <Table.HeaderCell />
-                                    <Table.HeaderCell colSpan='4'>
                                         <Button
                                             floated='left'
                                             icon
@@ -79,6 +75,12 @@ export default function JobPostingList() {
                                         >
                                             <Icon name='user' /> Add User
                                         </Button>
+                                    </Table.HeaderCell>
+                                </Table.Row>
+                                <Table.Row>
+                                    <Table.HeaderCell />
+                                    <Table.HeaderCell colSpan='4'>
+                                    
                                     </Table.HeaderCell>
                                 </Table.Row>
                             </Table.Footer>
