@@ -67,6 +67,20 @@ export default function JobPostingList() {
                                         </Menu>
                                     </Table.HeaderCell>
                                 </Table.Row>
+                                <Table.Row>
+                                    <Table.HeaderCell />
+                                    <Table.HeaderCell colSpan='4'>
+                                        <Button
+                                            floated='left'
+                                            icon
+                                            labelPosition='left'
+                                            primary
+                                            size='small'
+                                        >
+                                            <Icon name='user' /> Add User
+                                        </Button>
+                                    </Table.HeaderCell>
+                                </Table.Row>
                             </Table.Footer>
                         </Table>
                     </GridColumn>
