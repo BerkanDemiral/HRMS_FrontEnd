@@ -11,7 +11,7 @@ export default function SignOut({ signIn }) {
                     
                     <Button as={NavLink} to="/login" >Giriş Yap</Button>
                     <Button.Or />
-                    <Button positive>Kayıt Ol</Button>
+                    <Button as={NavLink} to="/registerUser" positive>Kayıt Ol</Button>
                 </Button.Group>
             </Menu.Item>
         </div>

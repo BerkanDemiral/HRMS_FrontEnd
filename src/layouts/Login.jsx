@@ -3,8 +3,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup"
 import { Button } from 'semantic-ui-react';
 import HrmsTextInput from "../utils/customFormControl/HrmsTextInput";
-
-
+import { NavLink } from "react-router-dom"
 
 
 export default function Login({ signIn }) {
@@ -30,7 +29,7 @@ export default function Login({ signIn }) {
 
             <div class="loginForm">
                 <div class="ui inverted segment">
-                    <p style={{fontSize:"20px"}} class="center">Giriş Yap</p>
+                    <p style={{fontSize:"24px"}} class="center">Giriş Yap</p>
                     <div class="ui inverted form">
                         <div class="two fields">
                             <div class="field">
@@ -44,7 +43,7 @@ export default function Login({ signIn }) {
                         </div>
                         <Button onClick={signIn} color="green" type="submmit">Giriş Yap</Button>
                         <div class="ui message">
-                            Hesap Oluşturun -- <a href="https://s.codepen.io/voltron2112/debug/PqrEPM?">Kayıt</a>
+                            <Button  as={NavLink} to="/registerUser"  > Hesap Oluştur </Button>
                         </div>
                     </div>
                 </div>

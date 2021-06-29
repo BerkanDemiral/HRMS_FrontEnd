@@ -9,7 +9,8 @@ import JobPostingList from '../pages/JobPosting/JobPostingList'
 import Content from './Content'
 import Navi from './Navi'
 import { Container } from 'semantic-ui-react'
-import RegisterForNormalUser from './Register/RegisterForNormalUser'
+import RegisterForNormalUser from './RegisterForNormalUser'
+import RegisterForEmployer from './RegisterForEmployer'
 
 export default function Dashboard() {
     return (
@@ -23,8 +24,10 @@ export default function Dashboard() {
                 <Route exact path="/jobPositions" component={JobPositionList} />
                 <Route exact path="/resumes" component={ResumeList} />
                 <Route exact path="/" component={CandidateList} />
+                <Route exact path="/registerUser" component={RegisterForNormalUser}/>
+                <Route exact path="/registerEmployer" component={RegisterForEmployer}/>
                 <Route exact path="/login" component={Login} />
-                {/* <Route exact path="/register" component={RegisterForNormalUser}/> */}
+                
 
             </Container>
             <Content />
