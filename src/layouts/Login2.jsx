@@ -12,9 +12,11 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Formik, Form } from "formik";
+import { Formik, useField, ErrorMessage, Form } from "formik";
 import * as Yup from "yup"
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import HrmsTextInput from '../utils/customFormControl/HrmsTextInput';
+import { Label } from 'semantic-ui-react'
 
 
 function Copyright() {
@@ -74,63 +76,57 @@ export default function Login2() {
     const classes = useStyles();
 
     return (
-        <div>
-            <Grid container component="main" className={classes.root}>
-                <CssBaseline />
-                <Grid item xs={false} sm={4} md={7} className={classes.image} />
-                <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-                    <div className={classes.paper}>
-                        <Avatar className={classes.avatar}>
-                            <LockOutlinedIcon />
-                        </Avatar>
-                        <Typography component="h1" variant="h5">
-                            Giriş Yap
-                        </Typography>
-                        <form className={classes.form} noValidate>
-                            <TextField
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
-                                autoFocus
-                            />
-                            <TextField
-                                variant="outlined"
-                                margin="normal"
-                                required
-                                fullWidth
-                                name="password"
-                                label="Password"
-                                type="password"
-                                id="password"
-                                autoComplete="current-password"
-                            />
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                                className={classes.submit}
-                                as={NavLink} to="/"
-                            >
+
+        <Formik
+            initialValues={initialValues}
+            validationSchema={schema}
+            onSubmit={(values) => {
+                console.log(values)
+            }}
+        >
+
+            <div>
+                <Grid container component="main" className={classes.root}>
+                    <CssBaseline />
+                    <Grid item xs={false} sm={4} md={7} className={classes.image} />
+                    <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+                        <div className={classes.paper}>
+                            <Avatar className={classes.avatar}>
+                                <LockOutlinedIcon />
+                            </Avatar>
+                            <Typography component="h1" variant="h5">
                                 Giriş Yap
-                            </Button>
-                            <Grid container>
-                                <Grid item>
-                                    <Link href="/registerUser" variant="body2">
-                                        {"Hesabınız yok mu? Hesap Oluştur"}
-                                    </Link>
+                            </Typography>
+                            <Form className="ui form col-12" >
+                                <label style={{ fontFamily: "Tahoma" }} for="">Email</label>
+                                <HrmsTextInput name="email" placeholder="Email" />
+                                <label style={{ fontFamily: "Tahoma" }} for="">Parola</label>
+                                <HrmsTextInput name="password" placeholder="Parola" />
+
+
+                                <Button
+                                    type="submit"
+                                    fullWidth
+                                    variant="contained"
+                                    color="primary"
+                                    className={classes.submit}
+                                    as={NavLink} to="/"
+                                >
+                                    Giriş Yap
+                                </Button>
+                                <Grid container>
+                                    <Grid item>
+                                        <Link href="/registerUser" variant="body2">
+                                            {"Hesabınız yok mu? Hesap Oluştur"}
+                                        </Link>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                            
-                        </form>
-                    </div>
+
+                            </Form>
+                        </div>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </div>
+            </div>
+        </Formik>
     );
 }

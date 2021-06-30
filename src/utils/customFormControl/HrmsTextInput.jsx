@@ -8,13 +8,15 @@ export default function HrmsTextInput({ ...props }) {
     //console.log(meta)
 
     return (
-        
-            <FormField error={meta.touched && !!meta.error}>
-                <input {...field} {...props} />
-                {meta.touched && !!meta.error ? (
+
+
+        <div error={meta.touched && !!meta.error} >
+            <div class="form-group">
+
+                <input  {...field} {...props} />{meta.touched && !!meta.error ? (
                     <Label pointing basic color="red" content={meta.error}></Label>
                 ) : null}
-            </FormField>
-        
+            </div>
+        </div>
     )
 }

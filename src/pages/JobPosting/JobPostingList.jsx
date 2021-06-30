@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button, Grid, GridColumn, GridRow, Icon, Menu, Table } from 'semantic-ui-react'
 import Categories from '../../layouts/Categories';
 import JobPostingService from '../../services/JobPostingService';
-import { Link } from "react-router-dom";
+import {NavLink, Link } from "react-router-dom";
 
 export default function JobPostingList() {
 
@@ -29,6 +29,8 @@ export default function JobPostingList() {
                                     <Table.HeaderCell>Açık pozisyon adedi</Table.HeaderCell>
                                     <Table.HeaderCell>Yayın tarihi</Table.HeaderCell>
                                     <Table.HeaderCell>Son başvuru tarihi</Table.HeaderCell>
+                                    <Table.HeaderCell>Çalışma Zamanı</Table.HeaderCell>
+                                    <Table.HeaderCell>Çalışma Tipi</Table.HeaderCell>
                                     <Table.HeaderCell></Table.HeaderCell>
                                 </Table.Row>
                             </Table.Header>
@@ -43,6 +45,8 @@ export default function JobPostingList() {
                                             <Table.Cell>{jobPosting.openPositionNumber}</Table.Cell>
                                             <Table.Cell>{jobPosting.createdDate}</Table.Cell>
                                             <Table.Cell>{jobPosting.closedDate}</Table.Cell>
+                                            <Table.Cell>{jobPosting.workingTime.workingTime}</Table.Cell>
+                                            <Table.Cell>{jobPosting.workingType.workingType}</Table.Cell>
                                             <Table.Cell><Button> Başvur </Button></Table.Cell>
                                         </Table.Row>
                                     ))
@@ -72,8 +76,9 @@ export default function JobPostingList() {
                                             labelPosition='left'
                                             primary
                                             size='small'
+                                            as={NavLink} to="/addJobPosting"
                                         >
-                                            <Icon name='user' /> Add User
+                                            <Icon name='user' /> İş ilanı Ekle
                                         </Button>
                                     </Table.HeaderCell>
                                 </Table.Row>

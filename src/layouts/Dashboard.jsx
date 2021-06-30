@@ -9,6 +9,7 @@ import Content from './Content'
 import Navi from './Navi'
 import { Container } from 'semantic-ui-react'
 import JobPostingDetail from '../pages/JobPosting/JobPostingDetail'
+import AddJobPosting from '../pages/JobPosting/AddJobPosting'
 
 export default function Dashboard() {
     return (
@@ -19,6 +20,7 @@ export default function Dashboard() {
                 <Route path="/candidates/:id" component={CandidateList} />
                 <Route exact path="/employers" component={EmployerList} />
                 <Route exact path="/jobPostings" component={JobPostingList} />
+                <Route exact path="/addJobPosting" component={AddJobPosting} />
                 <Route path="/jobPostings/:id" component={JobPostingDetail} />
                 <Route exact path="/jobPositions" component={JobPositionList} />
                 <Route exact path="/resumes" component={ResumeList} />

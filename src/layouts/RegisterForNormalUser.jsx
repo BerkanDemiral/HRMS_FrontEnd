@@ -12,6 +12,10 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Formik, useField, ErrorMessage, Form } from "formik";
+import * as Yup from "yup"
+import HrmsTextInput from '../utils/customFormControl/HrmsTextInput';
+import { NavLink } from "react-router-dom"
 
 function Copyright() {
     return (
@@ -47,136 +51,111 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function RegisterForNormalUser() {
+
+    const initialValues = { birthDate: "", email: "", firstName: "", lastName: "", nationalityId: "", password: "", repeatPassword: "" }
+    const schema = Yup.object({
+        birthDate: Yup.date().required("Doğum yılı giriniz"),
+        email: Yup.string().email().required("E-posta zorunludur"),
+        firstName: Yup.string().required("Ad zorunludur"),
+        lastName: Yup.string().required("Soyad zorunludur"),
+        nationalityId: Yup.string()
+            .required("TC Kimlik zorunludur")
+            .min(11, "TCKN 11 karakterden oluşmalıdır.")
+            .max(11, "TCKN 11 karakterden oluşmalıdır."),
+        password: Yup.string().required("Şifre zorunludur"),
+        repeatPassword: Yup.string()
+            .required("Şifre tekrarı zorunludur.")
+            .oneOf([Yup.ref("password"), null], "Şifreler uyuşmuyor"),
+    });
+
+
     const classes = useStyles();
 
     return (
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <div className={classes.paper}>
-                <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon />
-                </Avatar>
-                <Typography component="h1" variant="h5">
-                    Hesap Oluştur
-                </Typography>
-                <form className={classes.form} noValidate>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                autoComplete="fname"
-                                name="firstName"
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="firstName"
-                                label="Ad"
-                                autoFocus
 
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="lastName"
-                                label="Soyad"
-                                name="lastName"
-                                autoComplete="lname"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="email"
-                                label="Email Addres"
-                                name="email"
-                                autoComplete="email"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                name="password"
-                                label="Parola"
-                                type="password"
-                                id="password"
-                                autoComplete="current-password"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                name="repeatPassword"
-                                label="Parola"
-                                type="password"
-                                id="repeatPassword"
-                                autoComplete="current-password"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                
-                                name="identityNumber"
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="identityNumber"
-                                label="TC Kimlik No"
-                                autoFocus
+        <Formik
+            initialValues={initialValues}
+            validationSchema={schema}
+            onSubmit={(values) => {
+                console.log(values)
+            }}
+        >
 
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                variant="outlined"
-                                required
-                                fullWidth
-                                id="birthDate"
-                                label="Doğum Yılı"
-                                name="birthDate"
-                                autoComplete="lname"
-                            />
-                        </Grid>
 
-                        <Grid item xs={12}>
-                            <FormControlLabel
-                                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                                label="Kayıt sözleşmesini okudum ve onaylıyorum"
-                            />
-                        </Grid>
-                    </Grid>
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        className={classes.submit}
-                        
-                    >
-                        Kayıt Ol
-                    </Button>
-                    <Grid container>
-                                <Grid item>
-                                    <Link href="/registerEmployer" variant="body2">
-                                        {"Kurumsal bir hesap oluşturmak için Tıklayınız"}
-                                    </Link>
-                                    </Grid>
-                                    <Grid item>
-                                    <Link href="/login" variant="body2">
-                                        {"Zaten bir hesabınız var mı - Giriş yap"}
-                                    </Link>
-                                </Grid>
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <div className={classes.paper}>
+                    <Avatar className={classes.avatar}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography component="h1" variant="h5">
+                        Hesap Oluştur
+                    </Typography>
+                    <Form className="ui form col-12" >
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6}>
+                                <label style={{ fontFamily: "Tahoma" }} for="">Ad</label>
+                                <HrmsTextInput name="firstName" placeholder="Ad" />
+
                             </Grid>
-                </form>
-            </div>
+                            <Grid item xs={12} sm={6}>
+                                <label style={{ fontFamily: "Tahoma" }} for="">Soyad</label>
+                                <HrmsTextInput name="lastName" placeholder="Soyad" />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <label style={{ fontFamily: "Tahoma" }} for="">Email</label>
+                                <HrmsTextInput name="email" placeholder="Email" />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <label style={{ fontFamily: "Tahoma" }} for="">Parola</label>
+                                <HrmsTextInput name="password" placeholder="Parola" />
+                            </Grid>
+                            <Grid item xs={12}>
+                                <label style={{ fontFamily: "Tahoma" }} for="">Parola(Tekrar)</label>
+                                <HrmsTextInput name="repeatPassword" placeholder="Parola" />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <label style={{ fontFamily: "Tahoma" }} for="">TC Kimlik No</label>
+                                <HrmsTextInput name="identityNumber" placeholder="TC Kimlik No" />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <label style={{ fontFamily: "Tahoma" }} for="">Doğum yılı</label>
+                                <HrmsTextInput name="birthDate" placeholder="Doğum yılı" />
+                            </Grid>
 
-        </Container>
+                            <Grid item xs={12}>
+                                <FormControlLabel
+                                    control={<Checkbox value="allowExtraEmails" color="primary" />}
+                                    label="Kayıt sözleşmesini okudum ve onaylıyorum"
+                                />
+                            </Grid>
+                        </Grid>
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            className={classes.submit}
+
+                        >
+                            Kayıt Ol
+                        </Button>
+                        <Grid container>
+                            <Grid item>
+                                <Link href="/registerEmployer" variant="body2">
+                                    {"Kurumsal bir hesap oluşturmak için Tıklayınız"}
+                                </Link>
+                            </Grid>
+                            <Grid item>
+                                <Link href="/login" variant="body2">
+                                    {"Zaten bir hesabınız var mı - Giriş yap"}
+                                </Link>
+                            </Grid>
+                        </Grid>
+                    </Form>
+                </div>
+
+            </Container>
+        </Formik>
     );
 }

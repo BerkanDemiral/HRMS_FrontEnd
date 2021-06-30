@@ -23,7 +23,7 @@ export default function HomeDashboard() {
             <Route exact path="/jobPositions" component={Dashboard} />
             <Route exact path="/resumes" component={Dashboard} />
             <Route exact path="/" component={Dashboard} />
-            
+            <Route exact path="/addJobPosting" component={Dashboard} />
         </div>
     )
 }
