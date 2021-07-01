@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Login2() {
+export default function Login2({ signIn }) {
 
     const initialValues = { email: "", password: "" }
     const schema = Yup.object({
@@ -110,7 +110,7 @@ export default function Login2() {
                                     variant="contained"
                                     color="primary"
                                     className={classes.submit}
-                                    as={NavLink} to="/"
+                                    onClick={signIn}
                                 >
                                     Giriş Yap
                                 </Button>

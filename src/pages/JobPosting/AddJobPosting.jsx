@@ -2,14 +2,17 @@ import React from 'react'
 import { Form, Formik } from 'formik'
 import * as Yup from "yup";
 import { Button } from 'semantic-ui-react';
+import { toast } from 'react-toastify';
+import HrmsTextInput from '../../utils/customFormControl/HrmsTextInput';
 
 export default function AddJobPosting() {
-
-    const initialValues = { productName: "", unitPrice: "" }
+    const initialValues = { minSalary: "", maxSalary: "", numberOfPosition: "",  }
     const schema = Yup.object({
-        productName: Yup.string().required("Ürün adı zorunludur"),
-        unitPrice: Yup.number().required("Sayı girilmesi gerekmektedir.")
+        minSalary: Yup.number().required("Bu alan boş bırakılamaz"),
+        maxSalary: Yup.number().required("Bu alan boş bırakılamaz"),
+        numberOfPosition: Yup.number().required("Bu alan boş bırakılamaz")
     })
+
 
     return (
 
@@ -73,7 +76,7 @@ export default function AddJobPosting() {
                         <div class="col-4">
                             <div class="form-group">
                                 <label style={{ fontFamily: "Tahoma" }} for="exampleInputPassword1">Minimum Maaş</label>
-                                <input type="text" class="form-control" id="text" placeholder="Maaş ₺" />
+                                <HrmsTextInput name="minSalary" placeholder="Maaş ₺" />
                             </div>
                         </div>
 

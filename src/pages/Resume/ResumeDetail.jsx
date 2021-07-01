@@ -10,7 +10,7 @@ export default function ResumeDetail() {
     const [resumes, setResumes] = useState({})
     useEffect(() => {
         let resumeService = new ResumeService()
-        resumeService.(id).then(result => setResumes(result.data.data))
+        resumeService.getById(id).then(result => setResumes(result.data.data))
 
     }, [])
 

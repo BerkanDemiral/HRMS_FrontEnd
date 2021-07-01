@@ -24,7 +24,7 @@ export default function Dashboard() {
                 <Route path="/jobPostings/:id" component={JobPostingDetail} />
                 <Route exact path="/jobPositions" component={JobPositionList} />
                 <Route exact path="/resumes" component={ResumeList} />
-                <Route exact path="/" component={CandidateList} />
+                <Route exact path="/" component={JobPostingList} />
             </Container>
             <Content />
         </div>
